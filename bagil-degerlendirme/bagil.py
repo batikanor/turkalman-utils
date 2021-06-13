@@ -8,7 +8,7 @@ import math
 MIN_GRADE = 20
 MAX_GRADE = 100
 TOLERANCE = [0, 0.1, 0.2]
-FILE_NAME = "etik-guess1.txt"
+FILE_NAME = "etik-guess2.txt"
 PRINT_AA_WINNERS = False
 
 __location__ = os.path.realpath(
