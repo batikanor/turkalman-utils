@@ -8,7 +8,7 @@ import math
 MIN_GRADE = 20
 MAX_GRADE = 100
 TOLERANCE = [0, 0.1, 0.2]
-FILE_NAME = "inf701-2021.txt"
+FILE_NAME = "etik-guess1.txt"
 PRINT_AA_WINNERS = False
 
 __location__ = os.path.realpath(
@@ -16,22 +16,26 @@ __location__ = os.path.realpath(
 
 
 grade_dict = {}
-
+grade = str()
 with open(os.path.join(__location__, FILE_NAME), "r") as f:
     #print(f.read())
     names_included = len(f.readline().split()) == 2 # read header line, find if length = 2
+    
     #print(names_included)
     stud = -1
+
+
     for line in f.readlines():
         if (names_included):
             stud, grade = line.split()
         else:
             stud += 1
+            grade = line
         grade = float(grade.replace(',','.'))
         if grade < MIN_GRADE:
             continue
         grade = min(grade, MAX_GRADE)
-
+       
         grade_dict[stud] = grade
 
 ct = len(grade_dict.values())
@@ -81,3 +85,4 @@ for t in TOLERANCE:
 
 
     print("------------------")
+print(grade_dict)
