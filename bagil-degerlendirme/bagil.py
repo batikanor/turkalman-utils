@@ -8,8 +8,9 @@ import math
 MIN_GRADE = 20
 MAX_GRADE = 100
 TOLERANCE = [0, 0.1, 0.2]
-FILE_NAME = "etik-guess2.txt"
-PRINT_AA_WINNERS = False
+FILE_NAME = "ete2021.txt" # replace with your own file name
+FILE_PATH = "grades/" + FILE_NAME
+PRINT_AA_WINNERS = True
 
 __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
@@ -17,7 +18,7 @@ __location__ = os.path.realpath(
 
 grade_dict = {}
 grade = str()
-with open(os.path.join(__location__, FILE_NAME), "r") as f:
+with open(os.path.join(__location__, FILE_PATH), "r") as f:
     #print(f.read())
     names_included = len(f.readline().split()) == 2 # read header line, find if length = 2
     
@@ -49,40 +50,48 @@ if (std < 8 or ct < 20):
     print('MUTLAK DEGERLENDIRME YAPILACAK')
     exit(-1)
 
+letter_grades = {}
 for t in TOLERANCE:
-    aa=avg+std*(-2+(5.7-t)*(1/math.exp(avg/100)))
-    ab=avg+std*(-2.3+(5.7-t)*(1/math.exp(avg/100)))
-    ba=avg+std*(-2.7+(5.7-t)*(1/math.exp(avg/100)))
-    bb=avg+std*(-3+(5.7-t)*(1/math.exp(avg/100)))
-    bc=avg+std*(-3.3+(5.7-t)*(1/math.exp(avg/100)))
-    cb=avg+std*(-3.7+(5.7-t)*(1/math.exp(avg/100)))
-    cc=avg+std*(-4+(5.7-t)*(1/math.exp(avg/100)))
-    dc=avg+std*(-4.3+(5.7-t)*(1/math.exp(avg/100)))
-    dd=avg+std*(-4.7+(5.7-t)*(1/math.exp(avg/100)))
-    df=avg+std*(-5+(5.7-t)*(1/math.exp(avg/100)))
-    fd=avg+std*(-5.1+(5.7-t)*(1/math.exp(avg/100)))
-    ff=0
+    # grade_letters = ["aa", "ab", "ba", "bb", "bc", "cb", "cc", "dc", "dd", "df", "fd", "ff"]
+
+    letter_grades["aa"]=avg+std*(-2+(5.7-t)*(1/math.exp(avg/100)))
+    letter_grades["ab"]=avg+std*(-2.3+(5.7-t)*(1/math.exp(avg/100)))
+    letter_grades["ba"]=avg+std*(-2.7+(5.7-t)*(1/math.exp(avg/100)))
+    letter_grades["bb"]=avg+std*(-3+(5.7-t)*(1/math.exp(avg/100)))
+    letter_grades["bc"]=avg+std*(-3.3+(5.7-t)*(1/math.exp(avg/100)))
+    letter_grades["cb"]=avg+std*(-3.7+(5.7-t)*(1/math.exp(avg/100)))
+    letter_grades["cc"]=avg+std*(-4+(5.7-t)*(1/math.exp(avg/100)))
+    letter_grades["dc"]=avg+std*(-4.3+(5.7-t)*(1/math.exp(avg/100)))
+    letter_grades["dd"]=avg+std*(-4.7+(5.7-t)*(1/math.exp(avg/100)))
+    letter_grades["df"]=avg+std*(-5+(5.7-t)*(1/math.exp(avg/100)))
+    letter_grades["fd"]=avg+std*(-5.1+(5.7-t)*(1/math.exp(avg/100)))
+    letter_grades["ff"]=0
     print("For tolerance value: ", t, " the grades will be distributed as follows:")
-    print("aa", aa)
-    print("ab", ab)
-    print("ba", ba)
-    print("bb", bb)
-    print("bc", bc)
-    print("cb", cb)
-    print("cc", cc)
-    print("dc", dc)
-    print("dd", dd)
-    print("df", df)
-    print("fd", fd)
-    print("ff", ff)
+    for k, v in letter_grades.items():
+        print(k, v)
+
 
     if (PRINT_AA_WINNERS):
             
         print("students to take AA:")
         for k, v in grade_dict.items():
-            if v >= aa:
-                print(k)    
+            if v >= letter_grades['aa']:
+                print(k, end=', ')    
 
 
-    print("------------------")
-#print(grade_dict)
+    print("\n------------------")
+
+# l is the list of grades
+def print_grade_density(l):
+    print_list = {}
+    for g in l:
+        if (print_list.keys().__contains__(g)):
+            print_list[g] += "."
+        else:
+            print_list[g] = "."
+        
+    for k, v in print_list.items():
+        print(k, v)
+print_grade_density(grade_dict.values()) 
+
+
