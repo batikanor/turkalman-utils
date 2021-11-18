@@ -9,7 +9,7 @@ Bu kod taü yönetmeliklerine göre bağıl değerlendirme yapıyor.
 veya etik-guess1.txt örneğindeki gibi notları girin.
 Sonra bagil.py dosyasını "python3 bagil.py" komutuyla çalıştırın.
 
-not: tolerans değerini hocalar bizde genelde 0 alıyorlar..
+not: tolerans değerini hocalar bizde genelde 0 alıyorlar.. (obs de 5-6 dan fazla derste hesabı denedik ve tuttu. Zamanla değişirse bilinmez. Bi zahmet bi Pull Request atın :)) 
 
 
 
