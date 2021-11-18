@@ -1,7 +1,7 @@
 http://3fcampus.tau.edu.tr/uploads/cms/oidb.tau/5690_9.pdf
 a göre: (alınma tarihi 13 Haz 21)
 "değişim  programlarıyla  gelen  öğrenciler,  özel  öğrenciler  ve  dersi tekrarlayan öğrenciler bağıl değerlendirme hesaplamaları dışında tutulurlar."
-lütfen bu tür öğrencileri .txt den silin.
+lütfen bu tür öğrencileri .txt den silin. Bu kod bu linkteki formülleri implemente etmektedir.
 
 
 Bu kod taü yönetmeliklerine göre bağıl değerlendirme yapıyor.
@@ -13,7 +13,7 @@ not: tolerans değerini hocalar bizde genelde 0 alıyorlar..
 
 
 
-## Örnek kod çıktısı
+## Örnek kod çıktısı (belirtilen sayılar ilgili notların çan eğrili dahili aralık taban değerleridir)
 ```
 > count of grades to partake in bagil degerlendirme:  30
 > average ' ' ' ':  90.0
