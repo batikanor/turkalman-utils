@@ -1,3 +1,7 @@
+update: see the project below by Muhammed Sihebi for a web application that does the same thing:
+
+https://share.streamlit.io/nour0700/relative_evaluation_calculator_with_streamlit/main/main.py
+
 http://3fcampus.tau.edu.tr/uploads/cms/oidb.tau/5690_9.pdf
 a göre: (alınma tarihi 13 Haz 21)
 "değişim  programlarıyla  gelen  öğrenciler,  özel  öğrenciler  ve  dersi tekrarlayan öğrenciler bağıl değerlendirme hesaplamaları dışında tutulurlar."
